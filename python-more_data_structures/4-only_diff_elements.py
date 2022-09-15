@@ -1,4 +1,3 @@
 #!/usr/bin/python3
 def only_diff_elements(set_1, set_2):
-    keys = (len(a_dictionary))
-    return keys
+    return (len(a_dictionary))
