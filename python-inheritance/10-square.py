@@ -35,7 +35,7 @@ class Rectangle(BaseGeometry):
         return "[Rectangle] {}/{}".format(self.__width, self.__height)
 
 
-class square(Rectangle):
+class Square(Rectangle):
     """
     square that inherits from Rectangle
     """
