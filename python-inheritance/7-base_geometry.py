@@ -2,9 +2,6 @@
 """area(self)"""
 
 
-from ast import Str
-
-
 class BaseGeometry:
     """area(self)"""
 
