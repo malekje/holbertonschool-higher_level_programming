@@ -24,6 +24,7 @@ class Student:
             except:
                 pass
         return new_dict
+
     def reload_from_json(self, json):
         """transfer the attributes"""
         for n, m in json.items():
