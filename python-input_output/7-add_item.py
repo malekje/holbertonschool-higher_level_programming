@@ -1,5 +1,10 @@
 #!/usr/bin/python3
-"""add arguments to python list"""
+"""
+add arguments to python list
+You must use your function save_to_json_file from 5-save_to_json_file.py
+You must use your function load_from_json_file from 6-load_from_json_file.py
+The list must be saved as a JSON representation in a file named add_item.json
+"""
 
 
 import sys
