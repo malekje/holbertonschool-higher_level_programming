@@ -3,7 +3,7 @@
 7. Load, add, save
 adds all arguments to a Python list
 """
-import sys
+from sys import argv
 
 
 save_to_json_file = __import__('5-save_to_json_file.py').save_to_json_file
@@ -13,6 +13,9 @@ list = "add_item.json"
 
 try:
     file = load_from_json_file(list)
-except FileNotFoundError:
+except:
     file = []
-save_to_json_file(list, "add_item.json")
+
+for arg in argv[1:]:
+    file.append(arg)
+save_to_json_file(file, "add_item.json")
