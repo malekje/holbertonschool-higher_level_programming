@@ -17,11 +17,10 @@ class Student:
         """retrieves a dictionary representation"""
         if attrs is None:
             return self.__dict__
-        else:
-            new_dict = {}
-        for i in attrs:
+        new_dict = {}
+        for a in attrs:
             try:
-                new_dict[i] = self.__dict__[i]
+                new_dict[a] = self.__dict__[a]
             except:
                 pass
-            return new_dict
+        return new_dict
