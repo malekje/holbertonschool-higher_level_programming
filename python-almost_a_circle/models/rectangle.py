@@ -53,9 +53,11 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """func Y"""
         return self.__y
     
     def y(self, value):
+        """func Y"""
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
         if value < 0:
