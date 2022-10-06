@@ -87,3 +87,47 @@ class Rectangle(Base):
                     continue
                 print("#", end="")
             print()
+
+    def __str__(self):
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.__x, self.__y, self.__width, self.__height)
+
+    def update(self, *args, **kwargs):
+        """update"""
+        if args and len(args) != 0:
+            for index in range(len(args)):
+                if index == 0:
+                    self.id = args[index]
+                elif index == 1:
+                    self.__width = args[index]
+                elif index == 2:
+                    self.__height = args[index]
+                elif index == 3:
+                    self.__x = args[index]
+                elif index == 4:
+                    self.__y = args[index]
+        else:
+            if len(kwargs) > 0:
+                key = kwargs.keys()
+                for i in key:
+                    if i == 'id':
+                        self.id = kwargs['id']
+                    elif i == 'width':
+                        self.__width = kwargs['width']
+
+                    elif i == 'height':
+                        self.__height = kwargs['height']
+                    elif i == 'x':
+                        self.__x = kwargs['x']
+                    elif i == 'y':
+                        self.__y = kwargs['y']
+
+    def to_dictionary(self):
+        """return the dictionary of a rectangle"""
+
+        return {
+            'x': self.__x,
+            'y': self.__y,
+            'id': self.id,
+            'height': self.__height,
+            'width': self.__width}
