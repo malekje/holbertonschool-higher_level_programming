@@ -42,3 +42,11 @@ class Base:
             list_dic.append(obj.to_dictionary())
         with open(filename, "w") as f:
             f.write(cls.to_json_string(list_dic))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """returns the list of the JSON stirng"""
+        if json_string is None or json_string == "":
+            return []
+        else:
+            return json.loads(json_string)
