@@ -5,6 +5,7 @@ class rectangle
 
 from models.base import Base
 
+
 class Rectangle(Base):
     """ Rectangle class """
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -34,7 +35,7 @@ class Rectangle(Base):
     def y(self):
         """y"""
         return self.__y
-    
+
     @width.setter
     def width(self, value):
         """setter width"""
