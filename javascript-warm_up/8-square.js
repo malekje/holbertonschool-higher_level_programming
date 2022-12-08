@@ -5,7 +5,7 @@ const size = parseInt(firstArg);
 
 if (!isNaN(size)) {
   for (let i = 0; i < size; i++) {
-    var row = "";
+    const row = "";
     for (let j = 0; j < size; j++) {
       row += "#";
     }
