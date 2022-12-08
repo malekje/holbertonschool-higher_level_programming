@@ -3,7 +3,7 @@
 const firstArg = process.argv[2];
 const repeatCount = parseInt(firstArg);
 
-if (!isNaN(repeatCount)){
+if(!isNaN(repeatCount)) {
 
   for (let i = 0; i < repeatCount; i++) {
     console.log('C is fun');
