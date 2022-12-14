@@ -1,27 +1,17 @@
 #!/usr/bin/node
 
 const request = require('request');
-const url = process.argv[2];
-const characterId = 18;
+const API_URL = 'https://swapi-api.hbtn.io/api/films/';
+const CHARACTER_ID = 18;
 
-request.get(url, (err, res, body) => {
+request.get(API_URL, (err, res, body) => {
   if (err) {
+
     console.error(err);
-  } else {
-    let movies;
-    try {
-      movies = JSON.parse(body);
-    } catch (parseError) {
-      console.error(parseError);
-      return;
-    }
-
-    if (!Array.isArray(movies)) {
-      console.error('Expected response body to be an array of movies');
-      return;
-    }
-
-    const wedgeAntillesMovies = movies.filter(movie => movie.characters.includes(`https://swapi-api.hbtn.io/api/people/${characterId}/`));
-    console.log(wedgeAntillesMovies.length);
+    return;
   }
+  const data = JSON.parse(body);
+
+  const movies = data.results.filter(movie => movie.characters.includes(`https://swapi-api.hbtn.io/api/people/${CHARACTER_ID}/`));
+  console.log(`${movies.length}`);
 });
