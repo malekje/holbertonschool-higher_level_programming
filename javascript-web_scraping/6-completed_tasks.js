@@ -1,24 +1,22 @@
 #!/usr/bin/node
-const request = require('request');
-const url = process.argv[2] || 'https://jsonplaceholder.typicode.com/todos';
 
-request.get(url, (err, res, body) => {
+const request = require('request');
+const url = process.argv[2];
+request.get(url, function (err, response, body) {
   if (err) {
-    console.error(err);
-    return;
-  }
-  const tasks = JSON.parse(body);
-  const completedTasksByUser = new Map();
-  tasks.forEach((task) => {
-    if (task.completed) {
-      const userId = task.userId;
-      if (!completedTasksByUser.has(userId)) {
-        completedTasksByUser.set(userId, 0);
+    console.log(err);
+  } else {
+    const todos = JSON.parse(body);
+    const completed = {};
+    for (const x of todos) {
+      if (x.completed === true) {
+        if (x.userId in completed) {
+          completed[x.userId]++;
+        } else {
+          completed[x.userId] = 1;
+        }
       }
-      completedTasksByUser.set(userId, completedTasksByUser.get(userId) + 1);
     }
-  });
-  completedTasksByUser.forEach((count, userId) => {
-    console.log(`${userId}${count}`);
-  });
+    console.log(completed);
+  }
 });
