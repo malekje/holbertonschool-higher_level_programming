@@ -9,9 +9,7 @@ request.get(url, (err, res, body) => {
     console.error(err);
   } else {
     const movies = JSON.parse(body);
-    const wedgeMovies = movies.filter(movie => {
-      return movie.characters.includes(`https://swapi-api.hbtn.io/api/people/${characterId}/`);
-    });
-    console.log(wedgeMovies.length);
+    const wedgeAntillesMovies = movies.filter(movie => movie.characters.includes(`https://swapi-api.hbtn.io/api/people/${characterId}/`));
+    console.log(wedgeAntillesMovies.length);
   }
 });
