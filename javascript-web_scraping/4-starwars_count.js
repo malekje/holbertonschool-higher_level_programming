@@ -10,7 +10,7 @@ request.get(API_URL, (err, res, body) => {
     return;
   }
   const data = JSON.parse(body);
-
   const movies = data.results.filter(movie => movie.characters.includes(`https://swapi-api.hbtn.io/api/people/${CHARACTER_ID}/`));
+
   console.log(`${movies.length}`);
 });
