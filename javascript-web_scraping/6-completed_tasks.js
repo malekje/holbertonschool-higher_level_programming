@@ -19,6 +19,6 @@ request.get(url, (err, res, body) => {
     }
   });
   completedTasksByUser.forEach((count, userId) => {
-    console.log(`User ${userId} has completed ${count} tasks.`);
+    console.log(`${userId}${count}`);
   });
 });
