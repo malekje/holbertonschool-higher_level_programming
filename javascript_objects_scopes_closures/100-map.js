@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-exports.list = [1, 2, 3, 4, 5];
-const newList = list.map((value, index) => value * index);
-console.log(list); 
+const initialList = [1, 2, 3, 4, 5];
+const newList = initialList.map((value, index) => value * index);
+console.log(initialList); 
 console.log(newList);
