@@ -6,7 +6,6 @@ const CHARACTER_ID = 18;
 
 request.get(API_URL, (err, res, body) => {
   if (err) {
-
     console.error(err);
     return;
   }
